@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "react-scripts": "^5.0.1",
-    "web-vitals" : "^4.2.3"
+    "web-vitals" : "^4.2.3",
+    "postcss": "^8.4.41"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "postcss": "^8.4.41"
   }
 }
