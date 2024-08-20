@@ -1,4 +1,6 @@
-import { TAG_JAVASCRIPT, TAG_HTML, TAG_MATERIAL_UI, TAG_MYSQL, TAG_OPENGL, TAG_PHP, TAG_SQLITE,TAG_SYMFONY, TAG_STEAM, TAG_POEDIT, TAG_BOX2D, TAG_SEMANTIC, TAG_GAME_OFF_2018, TAG_CSHARP, TAG_UNITY, TAG_TCP_IP, TAG_JAVA, TAG_BOOTSTRAP, TAG_CPLUSPLUS, TAG_2D, TAG_3D, TAG_ANDROID, TAG_VUEJS, TAG_SFML, TagCv,TAG_REACT,TAG_ANTD,TAG_CSS,TAG_JSON, MMXXI, MMXXII, MMXVIII, MMXIX, MMXVII,  } from "./Const"
+import { fileCompleteName, TAG_JAVASCRIPT, TAG_HTML, TAG_MATERIAL_UI, TAG_MYSQL, TAG_OPENGL, TAG_PHP, TAG_SQLITE,TAG_SYMFONY, TAG_STEAM, TAG_POEDIT, TAG_BOX2D, TAG_SEMANTIC, TAG_GAME_OFF_2018, TAG_CSHARP, TAG_UNITY, TAG_TCP_IP, TAG_JAVA, TAG_BOOTSTRAP, TAG_CPLUSPLUS, TAG_2D, TAG_3D, TAG_ANDROID, TAG_VUEJS, TAG_SFML, TAG_REACT,TAG_ANTD,TAG_CSS,TAG_JSON, MMXXI, MMXXII, MMXVIII, MMXIX, MMXVII, VIDEO_PATH, PROJECT_BIGTOWN, EXTENSION_MP4,  } from "./Const"
+
+//TODO: remove types ID
 
 export const importData = [
     {
@@ -27,7 +29,7 @@ export const importData = [
       preview: "/images/previews/big.png",
       custom_link: "",
       description: ["Création d'un projet 3d utilisant Opengl / c++ et sfml, création d'un parser de .obj et de lecture de celui-ci, utilisation d'une skybox, possibilité de créer ou supprimer des objets 3d, afficher des objets 3d ainsi que leurs animations, caméra en vue fps."],
-      types: [2,"/videos/bigtown.mp4"],
+      types: [2, fileCompleteName(VIDEO_PATH, PROJECT_BIGTOWN, EXTENSION_MP4)],
       tags: [TAG_CPLUSPLUS,TAG_OPENGL, TAG_SFML,TAG_3D, TAG_2D],
       expanded: false,
     },

@@ -403,7 +403,7 @@ function App() {
           </div>
             <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }} style={{marginTop: "10px", marginBottom: "20px"}} justifyContent="center">
               <GridItemMultipleTooltip item_names={[TAG_REACT, TAG_JAVASCRIPT, TAG_TYPESCRIPT]} />
-              <GridItemMultipleTooltip item_names={[TAG_CSHARP, TAG_DOTNET]} fake_names={["Csharp", "DotNet"]} />
+              <GridItemMultipleTooltip item_names={[TAG_CSHARP, TAG_DOTNET]} fake_names={["csharp", "DotNet"]} />
               <GridItemMultipleTooltip item_names={[TAG_PHP, TAG_SYMFONY]}/>
               <GridItemMultipleTooltip item_names={[TAG_JAVA]}/>
             </Grid>
@@ -412,7 +412,7 @@ function App() {
           </div>
             
           <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }} style={{marginTop: "10px", marginBottom: "16px"}} justifyContent="center">
-            <GridItemMultipleTooltip item_names={[TAG_CPLUSPLUS, TAG_UNREAL_ENGINE_5, TAG_OPENGL]}/>
+            <GridItemMultipleTooltip item_names={[TAG_CPLUSPLUS, TAG_UNREAL_ENGINE_5, TAG_OPENGL]} fake_names={["cplusplus", "", ""]} />
             <GridItemMultipleTooltip item_names={[TAG_STEAM, TAG_SFML, TAG_BOX2D]}/>
             <GridItemMultipleTooltip item_names={[TAG_HTML, TAG_CSS, TAG_MYSQL]}/>
             <GridItemMultipleTooltip item_names={[TAG_BOOTSTRAP, TAG_ANTD, TAG_SEMANTIC]}/>
@@ -483,7 +483,7 @@ function App() {
           }
         >
         <div className="centerText">
-            <Element id={element.types[0]} url={element.types[1]} width={"100%"} height={"100%"} />
+            <Element url={element.types[1]} width={"100%"} height={"100%"} />
                   <CardActions disableSpacing>
                     {
                       element.tags.map((tag) => {

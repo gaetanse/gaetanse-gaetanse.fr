@@ -7,49 +7,60 @@ export const MMXIX = "2019"
 export const MMXVIII = "2018"
 export const MMXVII = "2017"
 //tags
-export const TAG_HTML = CheckBadNaming("Html")
-export const TAG_REACT = CheckBadNaming("React")
-export const TAG_ANTD = CheckBadNaming("Antd")
-export const TAG_CSS = CheckBadNaming("Css")
-export const TAG_JSON = CheckBadNaming("Json")
-export const TAG_OPENGL = CheckBadNaming("Opengl")
-export const TAG_JAVASCRIPT = CheckBadNaming("Javascript")
-export const TAG_TYPESCRIPT = CheckBadNaming("Typescript")
-export const TAG_MYSQL = CheckBadNaming("Mysql")
-export const TAG_PHP = CheckBadNaming("Php")
-export const TAG_MATERIAL_UI = CheckBadNaming("Material Ui")
-export const TAG_SYMFONY = CheckBadNaming("Symfony")
-export const TAG_VUEJS = CheckBadNaming("VueJS")
-export const TAG_GAME_OFF_2018 = CheckBadNaming("Game Off 2018")
-export const TAG_BOOTSTRAP = CheckBadNaming("Bootstrap")
-export const TAG_UNREAL_ENGINE_5 = CheckBadNaming("Unreal Engine 5")
-export const TAG_2D = CheckBadNaming("2D")
-export const TAG_3D = CheckBadNaming("3D")
-export const TAG_SFML = CheckBadNaming("Sfml")
-export const TAG_CPLUSPLUS = CheckBadNaming("C++")
-export const TAG_SEMANTIC = CheckBadNaming("Semantic")
-export const TAG_TCP_IP = CheckBadNaming("Tcp Ip")
-export const TAG_BOX2D = CheckBadNaming("Box2D")
-export const TAG_POEDIT = CheckBadNaming("Poedit")
-export const TAG_STEAM = CheckBadNaming("Steam")
-export const TAG_CSHARP = CheckBadNaming("C#") // bad_naming
-export const TAG_UNITY = CheckBadNaming("Unity")
-export const TAG_ANDROID = CheckBadNaming("Android")
-export const TAG_DOTNET = CheckBadNaming(".NET") // bad_naming
-export const TAG_SQLITE = CheckBadNaming("Sqlite")
-export const TAG_JAVA = CheckBadNaming("Java")
+export const TAG_HTML = "Html"
+export const TAG_REACT = "React"
+export const TAG_ANTD = "Antd"
+export const TAG_CSS = "Css"
+export const TAG_JSON = "Json"
+export const TAG_OPENGL = "Opengl"
+export const TAG_JAVASCRIPT = "Javascript"
+export const TAG_TYPESCRIPT = "Typescript"
+export const TAG_MYSQL = "Mysql"
+export const TAG_PHP = "Php"
+export const TAG_MATERIAL_UI = "Material Ui"
+export const TAG_SYMFONY = "Symfony"
+export const TAG_VUEJS = "VueJS"
+export const TAG_GAME_OFF_2018 = "Game Off 2018"
+export const TAG_BOOTSTRAP = "Bootstrap"
+export const TAG_UNREAL_ENGINE_5 = "Unreal Engine 5"
+export const TAG_2D = "2D"
+export const TAG_3D = "3D"
+export const TAG_SFML = "Sfml"
+export const TAG_CPLUSPLUS = "C++" // bad_naming
+export const TAG_SEMANTIC = "Semantic"
+export const TAG_TCP_IP = "Tcp Ip"
+export const TAG_BOX2D = "Box2D"
+export const TAG_POEDIT = "Poedit"
+export const TAG_STEAM = "Steam"
+export const TAG_CSHARP = "C#" // bad_naming
+export const TAG_UNITY = "Unity"
+export const TAG_ANDROID = "Android"
+export const TAG_DOTNET = ".NET" // bad_naming
+export const TAG_SQLITE = "Sqlite"
+export const TAG_JAVA = "Java"
 //paths
-export const IMAGE_ICON_PATH = "images/icons/"
+export const IMAGE_PATH = "/images/"
+export const IMAGE_ICON_PATH = "/images/icons/"
+export const VIDEO_PATH = "/videos/"
+//projects
+export const PROJECT_BIGTOWN = "bigtown_compress"
 //extension
 export const EXTENSION_PNG = ".png"
+export const EXTENSION_MP4 = ".mp4"
 //colors
 export const mainColor = "#606C5A"
 //rewrite bad naming
 export function CheckBadNaming(input)
 {
     let srcName = input
-    if(input==="C#") srcName = "csharp"
-    else if(input===".NET") srcName = "dotNet"
-    else if(input==="C++") srcName = "cplusplus"
+    if(input===TAG_CSHARP) srcName = "csharp"
+    else if(input===TAG_DOTNET) srcName = "dotNet"
+    else if(input===TAG_CPLUSPLUS) srcName = "cplusplus"
     return srcName.toLowerCase()
+}
+//file complete
+export function fileCompleteName(type, input, extension)
+{
+    const fullName = type + input + extension
+    return fullName.toLowerCase()
 }

@@ -1,19 +1,16 @@
 import React from 'react'
+import { IMAGE_PATH, VIDEO_PATH } from '../datas/Const'
 
-export default function Element(props) {
-    if(props.id === 0){
+export default function Element(props) 
+{
+    if(props.url.startsWith(IMAGE_PATH))
+    {
         return (
-            <object style={{objectFit: "fill",width:props.width, height:props.height}} type="application/pdf" data={props.url}>
-                <a href={props.url} target="_blank" rel="noreferrer"><img alt="" src="/images/previews/cv.png" style={{objectFit: "fill",width:props.width, height:props.height}}/></a>
-            </object>
-        )
-    }
-    else if(props.id === 1){
-        return(
             <img alt="" src={props.url} style={{objectFit: "fill",width:props.width, height:props.height}}/>
         )
     }
-    else if(props.id === 2){
+    else if(props.url.startsWith(VIDEO_PATH))
+    {
         return (
             <video src={props.url}  muted controls style={{objectFit: "contain",width:props.width, height:props.height}}/>
         )

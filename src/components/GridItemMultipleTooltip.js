@@ -19,6 +19,7 @@ function GridItemMultipleTooltip({item_names, width=48, id="testImage", fake_nam
                 {
                     item_names.map((name,index)=>
                     {
+                        console.log(name)
                         let srcName = name
                         if(fake_names.length !== 0)
                         {
