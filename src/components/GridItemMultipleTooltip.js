@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
-import { IMAGE_ICON_PATH, EXTENSION_PNG, mainColor } from '../datas/Const'
+import { IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming } from '../datas/Const'
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'light' ? "transparent" : '#ffffff',
@@ -11,6 +11,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 })) //TODO: put this in a const and remove unnecessary things
 
+//TODO: remove fake_names
 function GridItemMultipleTooltip({item_names, width=48, id="testImage", fake_names=[], alts=[]}) //TODO: id="testImage" remove ? //TODO: width=48 (default value in const)
 {
     return(
@@ -19,15 +20,7 @@ function GridItemMultipleTooltip({item_names, width=48, id="testImage", fake_nam
                 {
                     item_names.map((name,index)=>
                     {
-                        console.log(name)
-                        let srcName = name
-                        if(fake_names.length !== 0)
-                        {
-                            if(fake_names[index].length !== 0)
-                            {
-                                srcName = fake_names[index]
-                            }
-                        }
+                        const srcName = CheckBadNaming(name).toLowerCase()
                         // TODO: <img> add alt to it (using alts)
                         return (<Tooltip key={""} title={name} arrow><img src={ IMAGE_ICON_PATH + srcName + EXTENSION_PNG } width={width} id={id} style={{backgroundColor:mainColor}}/></Tooltip>)
                     })

@@ -398,6 +398,9 @@ function App() {
                 textDecoration: 'none',
               }}
             >
+              {
+                //TODO: remove fake_names
+              }
           <div id="testText" style={{backgroundColor:mainColor, maxWidth: "600px", borderRadius: "25px", padding: "10px", margin: "auto", marginTop: "25px"}}>
           Technologies courantes :
           </div>
@@ -467,7 +470,7 @@ function App() {
             }
           <Tooltip title={element.tags[0]} placement={i % 2 === 0 ? "left" : "right"}>
             {/* TODO: all img alt */}
-            <img style = {{backgroundColor: "white", borderRadius: "25px", padding: "5px"}} className="colorRandom" src={IMAGE_ICON_PATH + CheckBadNaming(element.tags[0]) + EXTENSION_PNG} width={"100%"} height={"100%"}/>
+            <img style = {{backgroundColor: "white", borderRadius: "25px", padding: "5px"}} className="colorRandom" src={IMAGE_ICON_PATH + CheckBadNaming(element.tags[0]).toLowerCase() + EXTENSION_PNG} width={"100%"} height={"100%"}/>
           </Tooltip>
           {
             i < (data.length-1) &&
@@ -490,7 +493,7 @@ function App() {
                         return(
                           <Tooltip title={tag}>
                             {/* TODO: all img alt */}
-                            <img src={IMAGE_ICON_PATH + CheckBadNaming(tag) + EXTENSION_PNG} width={32} height={32} id="testImage" style={{backgroundColor:mainColor, minWidth: "32px", minHeight: "32px"}}></img>
+                            <img src={IMAGE_ICON_PATH + CheckBadNaming(tag).toLowerCase() + EXTENSION_PNG} width={32} height={32} id="testImage" style={{backgroundColor:mainColor, minWidth: "32px", minHeight: "32px"}}></img>
                           </Tooltip>
                         )
                       })

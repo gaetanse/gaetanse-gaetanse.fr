@@ -26,18 +26,22 @@ export const TAG_UNREAL_ENGINE_5 = "Unreal Engine 5"
 export const TAG_2D = "2D"
 export const TAG_3D = "3D"
 export const TAG_SFML = "Sfml"
-export const TAG_CPLUSPLUS = "C++" // bad_naming
 export const TAG_SEMANTIC = "Semantic"
 export const TAG_TCP_IP = "Tcp Ip"
 export const TAG_BOX2D = "Box2D"
 export const TAG_POEDIT = "Poedit"
 export const TAG_STEAM = "Steam"
-export const TAG_CSHARP = "C#" // bad_naming
 export const TAG_UNITY = "Unity"
 export const TAG_ANDROID = "Android"
-export const TAG_DOTNET = ".NET" // bad_naming
 export const TAG_SQLITE = "Sqlite"
 export const TAG_JAVA = "Java"
+export const TAG_CPLUSPLUS = "C++" // bad_naming
+export const TAG_DOTNET = ".NET" // bad_naming
+export const TAG_CSHARP = "C#" // bad_naming
+//VALID NAMES
+const CPLUSPLUS_VALID = "cplusplus"
+const DOTNET_VALID = "dotnet"
+const CSHARP_VALID = "csharp"
 //paths
 export const IMAGE_PATH = "/images/"
 export const IMAGE_ICON_PATH = "/images/icons/"
@@ -53,10 +57,10 @@ export const mainColor = "#606C5A"
 export function CheckBadNaming(input)
 {
     let srcName = input
-    if(input===TAG_CSHARP) srcName = "csharp"
-    else if(input===TAG_DOTNET) srcName = "dotNet"
-    else if(input===TAG_CPLUSPLUS) srcName = "cplusplus"
-    return srcName.toLowerCase()
+    if(input===TAG_CSHARP) srcName = CSHARP_VALID
+    else if(input===TAG_DOTNET) srcName = DOTNET_VALID
+    else if(input===TAG_CPLUSPLUS) srcName = CPLUSPLUS_VALID
+    return srcName
 }
 //file complete
 export function fileCompleteName(type, input, extension)
