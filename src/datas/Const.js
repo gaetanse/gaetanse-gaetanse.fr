@@ -48,6 +48,10 @@ export const IMAGE_ICON_PATH = "/images/icons/"
 export const VIDEO_PATH = "/videos/"
 //projects
 export const PROJECT_BIGTOWN = "bigtown_compress"
+export const PROJECT_IOT_MODULE = "iot_modules_compress"
+export const PROJECT_MATCH = "match_compress"
+export const PROJECT_DST = "dst_compress"
+export const PROJECT_STAYSAFE = "staysafe_compress"
 //extension
 export const EXTENSION_PNG = ".png"
 export const EXTENSION_MP4 = ".mp4"

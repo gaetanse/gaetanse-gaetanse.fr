@@ -11,8 +11,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 })) //TODO: put this in a const and remove unnecessary things
 
-//TODO: remove fake_names
-function GridItemMultipleTooltip({item_names, width=48, id="testImage", fake_names=[], alts=[]}) //TODO: id="testImage" remove ? //TODO: width=48 (default value in const)
+function GridItemMultipleTooltip({item_names, width=48, id="testImage", alts=[]}) //TODO: id="testImage" remove ? //TODO: width=48 (default value in const)
 {
     return(
         <Grid item xs={4} sm={4} md={1.5}>
