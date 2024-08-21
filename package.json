@@ -3,18 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-vertical-timeline-component": "^3.6.0",
-    "@emotion/react": "^11.13.0",
+    "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
-    "@mui/material": "^5.16.7"
+    "@mui/material": "^5.16.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-vertical-timeline-component": "^3.6.0"
   },
   "devDependencies": {
+    "postcss": "^8.4.41",
     "react-scripts": "^5.0.1",
-    "web-vitals" : "^4.2.3",
-    "postcss": "^8.4.41"
+    "web-vitals": "^4.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
