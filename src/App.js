@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { styled, useTheme } from '@mui/material/styles'
 import MuiAppBar from '@mui/material/AppBar'
@@ -18,17 +17,9 @@ import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
-import CircularProgress from '@mui/material/CircularProgress'
-import Backdrop from '@mui/material/Backdrop'
-import SpeedDial from '@mui/material/SpeedDial'
-import SpeedDialIcon from '@mui/material/SpeedDialIcon'
-import SpeedDialAction from '@mui/material/SpeedDialAction'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import DownloadIcon from '@mui/icons-material/Download'
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote'
-import Card from '@mui/material/Card'
-import CardHeader from '@mui/material/CardHeader'
-import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import Collapse from '@mui/material/Collapse'
@@ -38,23 +29,15 @@ import CloudOffIcon from '@mui/icons-material/CloudOff'
 import GridItemMultipleTooltip from './components/GridItemMultipleTooltip'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import PhoneIcon from '@mui/icons-material/Phone'
-import PlaceIcon from '@mui/icons-material/Place'
-import FilledInput from '@mui/material/FilledInput'
-import FormControl from '@mui/material/FormControl'
-import FormHelperText from '@mui/material/FormHelperText'
-import Input from '@mui/material/Input'
-import InputLabel from '@mui/material/InputLabel'
-import TextField from '@mui/material/TextField'
-import OutlinedInput from '@mui/material/OutlinedInput'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
 import Divider from '@mui/material/Divider'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component'
-import { red } from '@mui/material/colors';
+import { red } from '@mui/material/colors'
 import { Tooltip } from '@mui/material'
 
 import { importData } from "./datas/ProjetsData"
-import { IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming, TAG_REACT, TAG_JAVASCRIPT, TAG_TYPESCRIPT, TAG_CSHARP, TAG_DOTNET, TAG_PHP, TAG_SYMFONY, TAG_JAVA, TAG_CPLUSPLUS, TAG_UNREAL_ENGINE_5, TAG_OPENGL, TAG_STEAM, TAG_SFML, TAG_BOX2D, TAG_HTML, TAG_CSS, TAG_MYSQL, TAG_BOOTSTRAP, TAG_ANTD, TAG_SEMANTIC, TAG_ANDROID, TAG_POEDIT, TAG_JSON } from './datas/Const'
+import { handleErrorFile, IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming, TAG_REACT, TAG_JAVASCRIPT, TAG_TYPESCRIPT, TAG_CSHARP, TAG_DOTNET, TAG_PHP, TAG_SYMFONY, TAG_JAVA, TAG_CPLUSPLUS, TAG_UNREAL_ENGINE_5, TAG_OPENGL, TAG_STEAM, TAG_SFML, TAG_BOX2D, TAG_HTML, TAG_CSS, TAG_MYSQL, TAG_BOOTSTRAP, TAG_ANTD, TAG_SEMANTIC, TAG_ANDROID, TAG_POEDIT, TAG_JSON } from './datas/Const'
 
 import './App.css'
 import 'react-vertical-timeline-component/style.min.css'
@@ -289,7 +272,7 @@ function App() {
               </Menu>
             </Box>
             {/* TODO: all img alt */}
-            <img src="/files/favicon.ico" width={32} height={32} style={{marginRight: "16px"}} sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} ></img>
+            <img src="/files/favicon.ico" width={32} height={32} style={{marginRight: "16px"}} sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} onError={(e)=>{handleErrorFile(e)}}></img>
             <Typography
               variant="h5"
               noWrap
@@ -382,7 +365,7 @@ function App() {
   
             </Typography>
               {/* TODO: all img alt */}
-              <img src="/images/photo_identite.png" width={"19%"} style={{border:"0px solid", borderRadius: "100px"}}></img>
+              <img src="/images/photo_identite.png" width={"19%"} style={{border:"0px solid", borderRadius: "100px"}} onError={(e)=>{handleErrorFile(e)}}></img>
 
             </div>
             
@@ -467,7 +450,7 @@ function App() {
             }
           <Tooltip title={element.tags[0]} placement={i % 2 === 0 ? "left" : "right"}>
             {/* TODO: all img alt */}
-            <img style = {{backgroundColor: "white", borderRadius: "25px", padding: "5px"}} className="colorRandom" src={IMAGE_ICON_PATH + CheckBadNaming(element.tags[0]).toLowerCase() + EXTENSION_PNG} width={"100%"} height={"100%"}/>
+            <img style = {{backgroundColor: "white", borderRadius: "25px", padding: "5px"}} className="colorRandom" src={IMAGE_ICON_PATH + CheckBadNaming(element.tags[0]).toLowerCase() + EXTENSION_PNG} width={"100%"} height={"100%"} onError={(e)=>{handleErrorFile(e)}}/>
           </Tooltip>
           {
             i < (data.length-1) &&
@@ -490,7 +473,7 @@ function App() {
                         return(
                           <Tooltip title={tag}>
                             {/* TODO: all img alt */}
-                            <img src={IMAGE_ICON_PATH + CheckBadNaming(tag).toLowerCase() + EXTENSION_PNG} width={32} height={32} id="testImage" style={{backgroundColor:mainColor, minWidth: "32px", minHeight: "32px"}}></img>
+                            <img src={IMAGE_ICON_PATH + CheckBadNaming(tag).toLowerCase() + EXTENSION_PNG} width={32} height={32} id="testImage" style={{backgroundColor:mainColor, minWidth: "32px", minHeight: "32px"}} onError={(e)=>{handleErrorFile(e)}}></img>
                           </Tooltip>
                         )
                       })

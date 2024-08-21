@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
-import { IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming } from '../datas/Const'
+import { IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming, handleErrorFile } from '../datas/Const'
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'light' ? "transparent" : '#ffffff',
@@ -21,7 +21,7 @@ function GridItemMultipleTooltip({item_names, width=48, id="testImage", alts=[]}
                     {
                         const srcName = CheckBadNaming(name).toLowerCase()
                         // TODO: <img> add alt to it (using alts)
-                        return (<Tooltip key={""} title={name} arrow><img src={ IMAGE_ICON_PATH + srcName + EXTENSION_PNG } width={width} id={id} style={{backgroundColor:mainColor}}/></Tooltip>)
+                        return (<Tooltip key={""} title={name} arrow><img src={ IMAGE_ICON_PATH + srcName + EXTENSION_PNG } width={width} id={id} style={{backgroundColor:mainColor}} onError={(e)=>{handleErrorFile(e)}}/></Tooltip>)
                     })
                 }
             </Item>

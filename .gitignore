@@ -2,7 +2,9 @@
 
 # dependencies
 /node_modules
-/public
+/public/files
+/public/images
+/public/videos
 /.pnp
 .pnp.js
 

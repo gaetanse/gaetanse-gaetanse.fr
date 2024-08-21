@@ -72,3 +72,9 @@ export function fileCompleteName(type, input, extension)
     const fullName = type + input + extension
     return fullName.toLowerCase()
 }
+//handle error file
+export function handleErrorFile(e)
+{
+    e.target.src = "/erreur-404.png"
+    e.target.alt = "made by design-circle : https://www.flaticon.com/fr/auteurs/design-circle"
+}
