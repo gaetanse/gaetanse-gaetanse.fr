@@ -7,7 +7,12 @@
   --BOULE_04_COLOR: #424340;
 }
 
-    /* background-color: var(--BOULE_03_COLOR); */
+html 
+{
+  background-color: var(--BACKGROUND_COLOR);
+  scroll-behavior: smooth;
+}
+
 .MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper MuiMenu-paper css-pwxzbm 
 {
   background-color: var(--BOULE_03_COLOR) !important;
@@ -133,10 +138,6 @@
 #link48 { scroll-margin-top: 20vh; }
 #link49 { scroll-margin-top: 20vh; }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -146,19 +147,6 @@ html {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  /*
-  background-color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
-  */
 }
 
 .App-link {
@@ -177,15 +165,6 @@ html {
 .css-pwxzbm 
 {
   background-color: var(--BOULE_03_COLOR) !important;
-}
-
-html {
-  font-family: 'Times New Roman' !important;
-  background-color: var(--BACKGROUND_COLOR);
-}
-
-#testText
-{
 }
 
 #testImage

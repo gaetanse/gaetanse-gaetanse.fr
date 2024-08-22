@@ -35,6 +35,7 @@ export const TAG_UNITY = "Unity"
 export const TAG_ANDROID = "Android"
 export const TAG_SQLITE = "Sqlite"
 export const TAG_JAVA = "Java"
+export const TAG_WORDPRESS = "Wordpress"
 export const TAG_CPLUSPLUS = "C++" // bad_naming
 export const TAG_DOTNET = ".NET" // bad_naming
 export const TAG_CSHARP = "C#" // bad_naming
