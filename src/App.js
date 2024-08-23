@@ -450,7 +450,7 @@ function App() {
             }
           <Tooltip title={element.tags[0]} placement={i % 2 === 0 ? "left" : "right"}>
             {/* TODO: all img alt */}
-            <img style = {{backgroundColor: "white", borderRadius: "25px", padding: "5px"}} className="colorRandom" src={IMAGE_ICON_PATH + CheckBadNaming(element.tags[0]).toLowerCase() + EXTENSION_PNG} width={"100%"} height={"100%"} onError={(e)=>{handleErrorFile(e)}}/>
+            <img style = {{backgroundColor: "white", borderRadius: "10px", padding: "5px"}} className="colorRandom" src={IMAGE_ICON_PATH + CheckBadNaming(element.tags[0]).toLowerCase() + EXTENSION_PNG} width={"100%"} height={"100%"} onError={(e)=>{handleErrorFile(e)}}/>
           </Tooltip>
           {
             i < (data.length-1) &&
