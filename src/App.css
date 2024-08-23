@@ -169,10 +169,10 @@ html
 
 #testImage
 {
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid #112D4E;
     background-color: #DBE2EF;
-    margin: 3px;
+    margin: 2px;
     padding: 3px;
 }
 
