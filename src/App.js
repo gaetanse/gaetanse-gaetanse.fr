@@ -466,7 +466,7 @@ function App() {
           }
         >
         <div className="centerText">
-            <Element url={element.type} width={"100%"} height={"100%"} />
+            <Element name={element.name} url={element.type} width={"100%"} height={"100%"} />
                   <CardActions disableSpacing>
                     {
                       element.tags.map((tag) => {

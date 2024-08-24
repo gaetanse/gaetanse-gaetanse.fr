@@ -45,11 +45,19 @@ const DOTNET_VALID = "dotnet"
 const CSHARP_VALID = "csharp"
 //paths
 export const IMAGE_PATH = "/images/"
+export const IMAGE_PREVIEW_PATH = "/images/previews/"
 export const IMAGE_ICON_PATH = "/images/icons/"
 export const VIDEO_PATH = "/videos/"
 //projects
 export const PROJECT_BIGTOWN = "bigtown_compress"
 export const PROJECT_IOT_MODULE = "iot_modules_compress"
+
+export const TITLE_GAETANSE_FR = "Gaetanse.fr"
+export const PROJECT_GAETANSE_FR = "gaetanse_fr"
+export const CUSTOM_LINK_GAETANSE_FR = "https://github.com/gaetanse/gaetanse.fr"
+export const DESCRIPTION_GAETANSE_FR_1 = "Création d'un projet de portfolio en version pro."
+
+
 export const PROJECT_MATCH = "match_compress"
 export const PROJECT_DST = "dst_compress"
 export const PROJECT_STAYSAFE = "staysafe_compress"
