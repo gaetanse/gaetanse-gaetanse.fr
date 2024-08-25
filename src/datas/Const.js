@@ -57,6 +57,7 @@ export const PROJECT_GAETANSE_FR = "gaetanse_fr"
 export const CUSTOM_LINK_GAETANSE_FR = "https://github.com/gaetanse/gaetanse.fr"
 export const DESCRIPTION_GAETANSE_FR_1 = "Création d'un projet de portfolio en version pro."
 
+export const CUSTOM_LINK_NONE = ""
 
 export const PROJECT_MATCH = "match_compress"
 export const PROJECT_DST = "dst_compress"
