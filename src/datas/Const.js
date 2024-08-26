@@ -48,16 +48,20 @@ export const IMAGE_PATH = "/images/"
 export const IMAGE_PREVIEW_PATH = "/images/previews/"
 export const IMAGE_ICON_PATH = "/images/icons/"
 export const VIDEO_PATH = "/videos/"
-//projects
+//projects TODO: remove duplicate and use only one (rename files)
+export const CUSTOM_LINK_NONE = ""
+
 export const PROJECT_BIGTOWN = "bigtown_compress"
-export const PROJECT_IOT_MODULE = "iot_modules_compress"
 
 export const TITLE_GAETANSE_FR = "Gaetanse.fr"
 export const PROJECT_GAETANSE_FR = "gaetanse_fr"
 export const CUSTOM_LINK_GAETANSE_FR = "https://github.com/gaetanse/gaetanse.fr"
 export const DESCRIPTION_GAETANSE_FR_1 = "Création d'un projet de portfolio en version pro."
 
-export const CUSTOM_LINK_NONE = ""
+export const TITLE_IOT_MODULE = "IOT-Modules"
+export const PROJECT_IOT_MODULE = "iot_modules_compress"
+export const PREVIEW_IOT_MODULE = "iot-modules"
+export const DESCRIPTION_IOT_MODULE_1 = "Création d'un projet simulant la création et le fonctionnement de modules ainsi que la gestion de création de données aléatoire en tâche de fond étant relié à un module avec une base de donné en utilisant doctrine sous sqlite."
 
 export const PROJECT_MATCH = "match_compress"
 export const PROJECT_DST = "dst_compress"
