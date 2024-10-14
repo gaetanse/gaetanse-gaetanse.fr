@@ -14,14 +14,14 @@ const Item = styled(Paper)(({ theme }) => ({
 function GridItemMultipleTooltip({item_names, width=48, id="testImage", alts=[]}) //TODO: id="testImage" remove ? //TODO: width=48 (default value in const)
 {
     return(
-        <Grid item xs={4} sm={4} md={1.5}>
-            <Item style={{boxShadow: "2px 2px 17px 3px " + mainColor}}> { /*TODO: boxShadow: "2px 2px 17px 3px " + mainColor to const*/  }
+        <Grid item xs={4} sm={4} md={1.5} style={{boxShadow: "0px !important"}}>
+            <Item style={{boxShadow: "0px !important"}}> { /*TODO: boxShadow: "2px 2px 17px 3px " + mainColor to const*/  }
                 {
                     item_names.map((name,index)=>
                     {
                         const srcName = CheckBadNaming(name).toLowerCase()
                         // TODO: <img> add alt to it (using alts)
-                        return (<Tooltip key={""} title={name} arrow><img src={ IMAGE_ICON_PATH + srcName + EXTENSION_PNG } width={width} id={id} style={{backgroundColor:mainColor}} onError={(e)=>{handleErrorFile(e)}}/></Tooltip>)
+                        return (<Tooltip key={""} title={name} arrow className="wobble-on-hover"><img src={ IMAGE_ICON_PATH + srcName + EXTENSION_PNG } width={width} style={{}} onError={(e)=>{handleErrorFile(e)}}/></Tooltip>)
                     })
                 }
             </Item>

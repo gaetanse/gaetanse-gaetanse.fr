@@ -39,6 +39,41 @@ export const TAG_WORDPRESS = "Wordpress"
 export const TAG_CPLUSPLUS = "C++" // bad_naming
 export const TAG_DOTNET = ".NET" // bad_naming
 export const TAG_CSHARP = "C#" // bad_naming
+// Association tags -> couleurs
+export const tagColors = {
+    [TAG_HTML]: "#CDA434",         // inchangé
+    [TAG_REACT]: "#252850",        // inchangé
+    [TAG_ANTD]: "#763C28",         // inchangé
+    [TAG_CSS]: "#A12312",          // inchangé
+    [TAG_JSON]: "#D9534F",         // changé
+    [TAG_OPENGL]: "#7B3F61",       // changé, nouveau
+    [TAG_JAVASCRIPT]: "#212121",   // inchangé
+    [TAG_TYPESCRIPT]: "#909090",   // inchangé
+    [TAG_MYSQL]: "#4C2F27",        // inchangé
+    [TAG_PHP]: "#1D334A",          // inchangé
+    [TAG_MATERIAL_UI]: "#FF5733",  // changé, nouveau
+    [TAG_SYMFONY]: "#755C48",      // inchangé
+    [TAG_VUEJS]: "#6D6552",        // inchangé
+    [TAG_GAME_OFF_2018]: "#403A3A",// inchangé
+    [TAG_BOOTSTRAP]: "#7F7679",    // inchangé
+    [TAG_UNREAL_ENGINE_5]: "#F4A900",// inchangé
+    [TAG_2D]: "#FF6F61",           // changé, nouveau
+    [TAG_3D]: "#35682D",           // inchangé
+    [TAG_SFML]: "#193737",         // inchangé
+    [TAG_SEMANTIC]: "#8A9597",     // inchangé
+    [TAG_TCP_IP]: "#3F888F",       // inchangé
+    [TAG_BOX2D]: "#FAD201",        // inchangé
+    [TAG_POEDIT]: "#6C6874",       // inchangé
+    [TAG_STEAM]: "#641C34",        // inchangé
+    [TAG_UNITY]: "#F4F4F4",        // inchangé
+    [TAG_ANDROID]: "#F5D033",      // inchangé
+    [TAG_SQLITE]: "#7FB5B5",       // inchangé
+    [TAG_JAVA]: "#3A405A",         // changé
+    [TAG_WORDPRESS]: "#2271B3",    // inchangé
+    [TAG_CPLUSPLUS]: "#5A3D55",    // changé, nouveau
+    [TAG_DOTNET]: "#B44C43",       // inchangé
+    [TAG_CSHARP]: "#59351F"        // inchangé
+  };
 //VALID NAMES
 const CPLUSPLUS_VALID = "cplusplus"
 const DOTNET_VALID = "dotnet"
@@ -56,12 +91,12 @@ export const PROJECT_BIGTOWN = "bigtown_compress"
 export const TITLE_GAETANSE_FR = "Gaetanse.fr"
 export const PROJECT_GAETANSE_FR = "gaetanse_fr"
 export const CUSTOM_LINK_GAETANSE_FR = "https://github.com/gaetanse/gaetanse.fr"
-export const DESCRIPTION_GAETANSE_FR_1 = "Création d'un projet de portfolio en version pro."
+export const DESCRIPTION_GAETANSE_FR_1 = "Projet de portfolio en utilisant React et Material Ui ainsi que du CSS pur."
 
 export const TITLE_IOT_MODULE = "IOT-Modules"
 export const PROJECT_IOT_MODULE = "iot_modules_compress"
 export const PREVIEW_IOT_MODULE = "iot-modules"
-export const DESCRIPTION_IOT_MODULE_1 = "Création d'un projet simulant la création et le fonctionnement de modules ainsi que la gestion de création de données aléatoire en tâche de fond étant relié à un module avec une base de donné en utilisant doctrine sous sqlite."
+export const DESCRIPTION_IOT_MODULE_1 = "Projet simulant le fonctionnement de modules. Création de données aléatoires en tâche de fond. Stockage de ces données dans une base de donnée sous SQLite."
 
 export const PROJECT_MATCH = "match_compress"
 export const PROJECT_DST = "dst_compress"
@@ -70,7 +105,11 @@ export const PROJECT_STAYSAFE = "staysafe_compress"
 export const EXTENSION_PNG = ".png"
 export const EXTENSION_MP4 = ".mp4"
 //colors
-export const mainColor = "#606C5A"
+export const mainColor = "#b0b9a8"
+export function colorName(input)
+{
+    return input
+}
 //rewrite bad naming
 export function CheckBadNaming(input)
 {

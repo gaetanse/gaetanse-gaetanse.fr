@@ -1,10 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  /*display: flex;
+  justify-content: space-between;
+  width: 99vw;
+  height: 85vh;
+  margin-top: 3vh;*/
+  display: flex;
+  flex-wrap: wrap;            /* Allow wrapping to the next line */
+  width: 100%; /* Make sure the container uses full width */
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  /*align-items: center;*/
+  flex-direction: column; /* Alignement vertical à l'intérieur de chaque box */
+  align-items: flex-start; /* Alignement des enfants en haut (gauche par défaut) */
+  justify-content: center;
+  justify-content: flex-start; /* Alignement des enfants en haut */
+  height: 85vh;
+  margin: 0 5px;
+}
+
+.mini_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.2fr 0.5fr 0.3fr; /* 1 1 0.5 */
+  gap: 10px; /* Espace entre les éléments */
+}
+
+.mini_box {
+  /*background-color: red;*/
+  /*height: 30vh;*/
+  display: flex;
+  /*flex-direction: column;
+  justify-content: flex-start;*/
+  /*flex-direction: column;*/
+  justify-content: center;
+  align-items: center;       /* Centre verticalement */
+  padding: 10px;
+  margin: 10px;
+}
+
+.full-width-box {
+  display: flex;
+  flex: none;
+  flex-direction: column; /* Alignement vertical à l'intérieur de chaque box */
+  width: 100%; /* Utilise 100% de la largeur de la fenêtre */
+  padding: 10px 25px 10px 75px; /* Ajoute du padding si nécessaire */
+  margin-top: 10px; /* Marge pour espacer de la section précédente */
+  border-top: 2px solid var(--BOULE_04_COLOR); /* Only top border for visibility */
+}
+
+.box img {
+  max-width: 100%;  /* Limite la largeur à celle de la boîte */
+  max-height: 100%; /* Limite la hauteur à celle de la boîte */
+  object-fit: contain; /* Ajuste l'image pour qu'elle remplisse la box sans déformer */
+  width: auto;      /* S'adapte proportionnellement à la boîte */
+  height: auto;     /* S'assure que le ratio de l'image est conservé */
+  margin: 0 auto;    /* Centre l'image horizontalement */
+  animation: grow 2s ease forwards; /* Animation to grow */
+}
+
+.box div img
+{
+  width: 128px;
+  border-radius: 20px;
+  border: 0px;
+}
+
+.customImgSize1
+{
+  width: 128px !important;
+
+}
+
+.customImgSize2
+{
+  width: 192px !important;
+
+}
+.customBackground
+{
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+p
+{
+  font-size: 2.2em;
+  color: black;
+}
+
+h1
+{
+  font-size: 2.8em;
+  color: #393b3d;
+}
+
+.box > div 
+{
+  animation: grow 2s ease forwards; /* Animation to grow */
+}
+
+/* BottomNavbar.css */
+.bottom-navbar {
+  position: fixed; /* Fixed position */
+  bottom: 0; /* Align to the bottom of the viewport */
+  left: 0; /* Align to the left */
+  /*width: 200px; /* Set a fixed width for the navbar */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start (left) */
+  /*background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white; /* Text color */
+  /*padding: 10px; /* Padding for aesthetics */
+  /*box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.nav-item {
+  cursor: pointer; /* Change cursor to pointer */
+  width: 100%; /* Make items take full width of the navbar */
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/*.box:nth-child(1) {
+  background-color: #ff9999;
+}
+
+.box:nth-child(2) {
+  background-color: #99ccff;
+}
+
+.box:nth-child(3) {
+  background-color: #99ff99;
+}*/
+.nav-icon {
+  width: 64px !important;
+  height: 64px !important;
+  color: var(--LIGTH_DARK) !important;
+  /*border-radius: 50px;
+  border: 2px solid;
+  padding: 3px;
+  /*margin-right: 15px; /* Adjust margin as needed */
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.css-1dr3gdi-MuiPaper-root {
+  box-shadow: none !important;
+}
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper /* DEBUG */
+{
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(2px) !important;
+}
+.css-pwxzbm  /* PRODUCTION */
+{
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(2px) !important;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translate(0);
+  }
+  15% {
+    transform: translate(-5px, 0);
+  }
+  30% {
+    transform: translate(5px, 0);
+  }
+  45% {
+    transform: translate(-5px, 0);
+  }
+  60% {
+    transform: translate(5px, 0);
+  }
+  75% {
+    transform: translate(-5px, 0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.wobble-on-hover {
+  display: inline-block; /* Ensures the element takes the right space */
+  transition: transform 0.2s; /* Smooth transition */
+}
+
+.wobble-on-hover:hover {
+  animation: wobble 0.5s ease-in-out; /* Trigger the wobble animation on hover */
+}
+
+.ico_size
+{
+  width: 72px !important;
+  height: 72px !important;
+  margin: 10px !important;
+}
+
+.custom_width_1
+{
+  width: 450px;
+}
+
+.custom_width_2
+{
+  width: 350px;
+}
+
+.customMarginRigth
+{
+  margin-right: 256px;
+}
+
+.CustomMaxSize
+{
+  max-width: 1000px;
+  max-height: 700px;
+}
+
+.css-tmmfpb
+{
+  box-shadow: none !important;
+}
+
+/* Media Queries for mobile screens */
+@media (max-width: 1024px) {
+
+
+  .CustomMaxSize
+  {
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  .customMarginRigth
+  {
+    margin-right: 8px;
+  }
+  .custom_width_1
+  {
+    width: auto;
+  }
+  
+  .custom_width_2
+  {
+    width: auto;
+  }
+  .ico_size
+  {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 0.5px !important;
+  }
+
+  .customImgSize1
+  {
+    width: 92px !important;
+  }
+
+  .customImgSize2
+  {
+    width: 128px !important;
+  }
+  .mini_container {
+    grid-template-columns: repeat(1, 1fr); /* 4 colonnes égales */
+  }
+  .nav-icon {
+      width: 32px !important; /* Reduce icon size for mobile */
+      height: 32px !important; /* Reduce icon height for mobile */
+      /*margin-right: 10px; /* Adjust margin for mobile */
+      /*padding: 2px; /* Adjust padding for mobile */
+  }
+  .container {
+    flex-direction: column; /* Change l'orientation en colonne sur mobile */
+    height: 85vh; /* Permet aux div d'occuper la taille naturelle en hauteur */
+    margin-top: 2vh;
+    width: 98vw;
+    display: block;
+  }
+
+  .box {
+    margin: 10px 0; /* Ajoute de l'espacement vertical entre les div */
+    height: auto; /* Hauteur fixe des div sur mobile, peut être ajustée */
+  }
+
+  .box > div {
+    /*width: 90%; /* Ajuste la largeur pour qu'elle prenne moins d'espace */
+    margin: 10px auto !important; /* Centre et ajuste la marge verticale */
+    /*padding: 10px 20px; /* Réduit le padding pour mobile */
+  }
+  
+  .box div img
+  {
+    width: 40px;
+    border-radius: 20px;
+    border: 0px;
+  }
+
+  .full-width-box {
+      padding: 15px; /* Ajustement du padding pour mobile */
+      font-size: 16px; /* Ajustement de la taille de police si nécessaire */
+  }
+
+  p
+  {
+    font-size: 1em;
+  }
+
+  h1
+  {
+    font-size: 1.6em;
+    color: var(--TEXT_COLOR) !important;
+  }
+
+}
+
+/* Keyframes for growing animation */
+@keyframes grow {
+  0% {
+    transform: scale(0);  /* Start small */
+    opacity: 0;           /* Start invisible */
+  }
+  50% {
+    transform: scale(1.1); /* Grow slightly larger */
+    opacity: 0.5;          /* Fade in */
+  }
+  100% {
+    transform: scale(1);   /* End at normal size */
+    opacity: 1;            /* Fully visible */
+  }
+}
+
 :root 
 {
-  --BACKGROUND_COLOR: #C9E3CC;
+  --BACKGROUND_COLOR: #e6ede6;
   --BOULE_01_COLOR: #B8CBD0;
   --BOULE_02_COLOR: #B0B9A8;
-  --BOULE_03_COLOR: #606C5A;
-  --BOULE_04_COLOR: #424340;
+  --BOULE_03_COLOR: rgb(169, 160, 160);
+  --BOULE_04_COLOR: #b0b9a8;
+  --TEXT_COLOR: black;
+  --LIGTH_DARK: #393b3d;
 }
 
 html 
@@ -53,18 +404,18 @@ html
 }
 
 .vertical-timeline::before {
-  background: var(--BOULE_03_COLOR) !important;
+  background: var(--BOULE_04_COLOR) !important;
   animation: Background 100s ease infinite; 
   width: 5px !important;
 }
 
 .colorRandom {
-  background: var(--BOULE_03_COLOR) !important;
-  border-color: black;
+  background: var(--BOULE_04_COLOR) !important;
+ /*border-color: black;*/
 }
 
 *::-webkit-scrollbar {
-  width: 20px;
+  width: 15px;
 }
 
 *::-webkit-scrollbar-track {
@@ -72,7 +423,7 @@ html
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--BOULE_02_COLOR);
+  background-color: white;
 }
 
 .App {
@@ -162,18 +513,15 @@ html
   }
 }
 
-.css-pwxzbm 
+/*.css-pwxzbm 
 {
   background-color: var(--BOULE_03_COLOR) !important;
-}
+}*/
 
 #testImage
 {
-    border-radius: 10px;
-    border: 2px solid #112D4E;
-    background-color: #DBE2EF;
-    margin: 2px;
-    padding: 3px;
+    margin: 1px;
+    padding: 1px;
 }
 
 @keyframes move {
