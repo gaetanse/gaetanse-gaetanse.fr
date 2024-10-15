@@ -33,7 +33,7 @@ body {
 
 .mini_container {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.2fr 0.5fr 0.3fr; /* 1 1 0.5 */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 1fr 1fr 0.2fr 0.5fr 0.3fr */
   gap: 10px; /* Espace entre les éléments */
 }
 
@@ -239,9 +239,25 @@ h1
   box-shadow: none !important;
 }
 
+.customImgVideoSizeEtc
+{
+  width: 50%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /* Media Queries for mobile screens */
 @media (max-width: 1024px) {
 
+
+.customImgVideoSizeEtc
+{
+  width: 100%;
+  height: auto;
+}
 
   .CustomMaxSize
   {

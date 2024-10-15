@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
-import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { styled, useTheme } from '@mui/material/styles'
@@ -36,6 +35,7 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import TextField from '@mui/material/TextField';
 import { red } from '@mui/material/colors'
 import { Tooltip } from '@mui/material'
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 import emailjs from 'emailjs-com';
 
 import { importData } from "./datas/ProjetsData"
@@ -93,6 +93,15 @@ function App_new()
   const [USER_ID] = useState(process.env.REACT_APP_USER_ID)
   const [TEMPLATE_ID] = useState(process.env.REACT_APP_TEMPLATE_ID)
   const [SERVICE_ID] = useState(process.env.REACT_APP_SERVICE_ID)
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -211,6 +220,7 @@ function App_new()
   }
   
   const [index, setIndex] = useState(0);
+  const [element, setElement] = useState(null)
   
   //TODO: put all in const file
   //TODO: remove all unnecessary things
@@ -334,6 +344,68 @@ function App_new()
         </Container>
       </AppBar>
 
+              {
+                element!= null &&
+                                <Dialog
+                                  open={open}
+                                  onClose={handleClose}
+                                  fullScreen
+                                  PaperProps={{
+                                    sx: {
+                                      backgroundColor: '#e6ede6',  // Change background color here
+                                    },
+                                  }}
+                                >
+                                  <DialogContent>
+                                  <h1 style={{margin: "5px"}}><b>{element.name}</b></h1>
+                                    <hr/>
+                                    <p style={{margin: "5px"}}>Date : { element.date }</p>
+                                    <hr/>
+                                    <Element name={element.name} description={element.description} url={element.type} width={"100%"} height={"100%"}/>
+                                    <hr/>
+                                    <p style={{margin: "5px"}}> Accessible en ligne :
+                                    {
+                                      element.custom_link !== "" ? <a href={element.custom_link} target="_blank" rel="noreferrer" style={{color:"black"}}><Tooltip title="Lien disponible !" placement={"right"}><CloudQueueIcon/></Tooltip> </a> : <> <Tooltip title="Lien pas disponible !" placement={"right"}><CloudOffIcon sx={{ color: red[500] }} /></Tooltip> </>
+                                    }
+                                    </p>
+                                    <hr/>
+                                    <p style={{margin: "5px"}}>Description : {
+                                      element.description.map((el)=>{
+                                        return(
+                                          <>
+                                          {el}
+                                          </>
+                                        )
+                                      })
+                                    }
+                                    </p>
+                                    <hr/>
+                                    <p style={{margin: "5px"}}>Tags : {
+                                      element.tags.map((tag) => {
+                                        return(
+                                          <span style={{color: tagColors[tag]}}><b>#{ CheckBadNaming(tag).toLowerCase().charAt(0).toUpperCase() + CheckBadNaming(tag).toLowerCase().slice(1) }</b> </span>                            
+                                        )
+                                      })
+                                    }
+                                     {
+                                          element.tags.map((tag) => {
+                                            return(
+                                              <Tooltip title={tag} className="wobble-on-hover">
+                                                {/* TODO: all img alt */}
+                                                <img src={IMAGE_ICON_PATH + CheckBadNaming(tag).toLowerCase() + EXTENSION_PNG} className="ico_size" id="testImage" onError={(e)=>{handleErrorFile(e)}}></img>
+                                              </Tooltip>
+                                            )
+                                          })
+                                        }
+                                      </p>
+                                  </DialogContent>
+                                  <DialogActions>
+                                    <Button onClick={handleClose} color="error" variant="contained">
+                                      Fermer
+                                    </Button>
+                                  </DialogActions>
+                                </Dialog>
+              }
 
       <div className="container">
         <div className="box">
@@ -448,28 +520,24 @@ function App_new()
       Mes projets :
     </h1>
 
+    <div className="mini_container" style={{marginTop: "10px"}}>
   {data !== undefined && 
       data.length > 0 && data.map((element,i)=>{
+        {/*<div className="mini_box" style={{borderRadius: "20px"}}>
+        {
+                  element.tags.map((tag) => {
+                    return(
+                      <Tooltip title={tag} className="wobble-on-hover">
+                        <img src={IMAGE_ICON_PATH + CheckBadNaming(tag).toLowerCase() + EXTENSION_PNG} className="ico_size" id="testImage" onError={(e)=>{handleErrorFile(e)}}></img>
+                      </Tooltip>
+                    )
+                  })
+                }
+        </div>
+        <div className="mini_box" style={{borderRadius: "20px"}}>
+        <Element name={element.name} description={element.description} url={element.type} width={"100%"} height={"auto"} />
+        </div>*/}
         return(
-          <div className="mini_container">
-            <div className="mini_box" style={{borderRadius: "20px"}}>
-            {
-                      element.tags.map((tag) => {
-                        return(
-                          <Tooltip title={tag} className="wobble-on-hover">
-                            {/* TODO: all img alt */}
-                            <img src={IMAGE_ICON_PATH + CheckBadNaming(tag).toLowerCase() + EXTENSION_PNG} className="ico_size" id="testImage" onError={(e)=>{handleErrorFile(e)}}></img>
-                          </Tooltip>
-                        )
-                      })
-                    }
-            </div>
-            <div className="mini_box" style={{borderRadius: "20px"}}>
-            <Element name={element.name} description={element.description} url={element.type} width={"100%"} height={"auto"} />
-            </div>
-            <div className="mini_box" style={{borderRadius: "20px"}}>
-
-            </div>
           <div className="mini_box customBackground" style={{borderRadius: "5px"}}>
                     <CardContent style={{padding: "0px"}}>
                     <b>{element.name}</b> ({ element.date })
@@ -492,17 +560,40 @@ function App_new()
                           )
                         })
                       }
+                      <br/>
+                      <Button variant="contained" color="primary" onClick={() => {
+                        setOpen(true)
+                        setElement(element)
+                      }} style={{marginTop: "10px"}}>
+                        Détails du projet
+                      </Button>
+
+                      {/*<Dialog
+                        open={open}
+                        onClose={handleClose}
+                        fullScreen
+                      >
+                        <DialogTitle><h1><b>{element.name}</b></h1></DialogTitle>
+                        <DialogContent>
+                          <hr/>
+                          <p style={{margin: "10px"}}>Date : { element.date }</p>
+                          <hr/>
+                          <p style={{margin: "10px"}}>This is the full-screen detail box using Material-UI's Dialog component.</p>
+                        </DialogContent>
+                        <DialogActions>
+                          <Button onClick={handleClose} color="error" variant="contained">
+                            Fermer
+                          </Button>
+                        </DialogActions>
+                      </Dialog>*/}
                     </CardContent>
           </div>
-            <div className="mini_box" style={{borderRadius: "20px"}}>
-              
-            </div>
-  </div>
         )
       }
       )
   }
     
+  </div>
       </Box>
 
 
@@ -522,7 +613,7 @@ function App_new()
       <img src="/images/previews/cv alternance.png" className="CustomMaxSize"/>
     </Grid>
     <Grid item xs={4} sm={4} md={12}>
-      <Button style={{backgroundColor: mainColor, color: "black"}} color="secondary" size="large" endIcon={<DownloadIcon />} href="/files/cv.pdf" target="_blank" rel="noreferrer">Téléchargez mon CV</Button>
+      <Button variant="contained" color="primary" size="large" endIcon={<DownloadIcon />} href="/files/cv.pdf" target="_blank" rel="noreferrer">Téléchargez mon CV</Button>
     </Grid>
   </Grid>
 
@@ -545,7 +636,7 @@ function App_new()
           style={{margin: "5px", width: "75%"}}
         />
         <br/>
-      <Button style={{backgroundColor: mainColor, color: "black", marginTop: "20px"}} color="secondary" size="large" type="submit">Envoyer</Button>
+      <Button style={{marginTop: "10px"}} variant="contained" color="primary" size="large" type="submit">Envoyer</Button>
       <p>{status}</p>
     </form>
 </div>
