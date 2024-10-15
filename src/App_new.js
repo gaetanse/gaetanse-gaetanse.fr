@@ -95,7 +95,7 @@ function App_new()
   const [SERVICE_ID] = useState(process.env.REACT_APP_SERVICE_ID)
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const templateParams = {
       name: name,
@@ -106,19 +106,20 @@ function App_new()
     if(name.length>0 && email.length>0 && email.includes("@") && message.length > 0)
     {
       emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
-        .then((response) => {
-          //console.log('SUCCESS!', response.status, response.text);
-          setStatus('Message envoyé avec succès!');
-        }, (error) => {
-          //console.log('FAILED...', error);
-          setStatus('Échec de l\'envoi du message.');
+        .then(() => {
+          setStatus('Message envoyé avec succès!')
+          setName('')
+          setEmail('')
+          setMessage('')
+        }, () => {
+          setStatus('Échec de l\'envoi du message.')
         });
     }
     else{
       setStatus('Veuillez remplir correctement les informations !');
     }
 
-  };
+  }
 
   const theme = useTheme()
   const [data, setData] = useState(importData)
@@ -531,14 +532,15 @@ function App_new()
 <div className="full-width-box" id="contact">
 <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: '0 auto' }}>
       <h2>Contact rapide</h2>
-      <TextField label="Nom" type="text" color="info" required onChange={(e) => setName(e.target.value)} style={{margin: "5px"}}/>
-      <TextField label="Email" type="email" color="info" required onChange={(e) => setEmail(e.target.value)} style={{margin: "5px"}}/>
+      <TextField label="Nom" type="text" color="info" required value={name} onChange={(e) => setName(e.target.value)} style={{margin: "5px"}}/>
+      <TextField label="Email" type="email" color="info" required value={email} onChange={(e) => setEmail(e.target.value)} style={{margin: "5px"}}/>
         <TextField
           label="Message"
           multiline
           rows={3}
           required
           color="info"
+          value={message}
           onChange={(e) => setMessage(e.target.value)}
           style={{margin: "5px", width: "75%"}}
         />
