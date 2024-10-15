@@ -46,8 +46,8 @@ import 'react-vertical-timeline-component/style.min.css'
 
 //TODO: remove unnecessary imports / remove all ';'
 
-const pages = ['À propos', 'Projets', 'Contact', 'CV']
-const links = ['#top', '#projects', '#contact', '#cv']
+const pages = ['À propos', 'Projets', 'CV', 'Contact']
+const links = ['#top', '#projects', '#cv', '#contact']
 const drawerWidth = 240
 //TODO: put all in const file
 
