@@ -443,15 +443,16 @@ function App_new()
 
 <div className="full-width-box">
               
-<Box component="section" style={{marginTop: "20px"}} sx={{ p: 2 }} id="projects">
-    <h1>
+<Box component="section" sx={{ p: 2 }} id="projects">
+    <h1 style={{marginBottom: "10px"}}>
       Mes projets :
     </h1>
 
   {data !== undefined && 
       data.length > 0 && data.map((element,i)=>{
         return(
-          <div className="mini_container">
+          <>
+          <div className="mini_container" style={{borderTop: "2px solid #b0b9a8"}}>
             <div className="mini_box" style={{borderRadius: "20px"}}>
             {
                       element.tags.map((tag) => {
@@ -467,7 +468,7 @@ function App_new()
             <div className="mini_box" style={{borderRadius: "20px"}}>
             <Element name={element.name} description={element.description} url={element.type} width={"100%"} height={"auto"} />
             </div>
-            <div className="mini_box" style={{borderRadius: "20px"}}>
+            <div className="mini_box mini_box_custom" style={{borderRadius: "20px"}}>
 
             </div>
           <div className="mini_box customBackground" style={{borderRadius: "5px"}}>
@@ -494,10 +495,11 @@ function App_new()
                       }
                     </CardContent>
           </div>
-            <div className="mini_box" style={{borderRadius: "20px"}}>
+            <div className="mini_box mini_box_custom" style={{borderRadius: "20px"}}>
               
             </div>
   </div>
+            </>
         )
       }
       )
@@ -505,10 +507,8 @@ function App_new()
     
       </Box>
 
-
 </div>
 <div className="full-width-box" id="cv">
-  
               
   <Box component="section" style={{marginTop: "20px"}} sx={{ p: 2 }}>
 
