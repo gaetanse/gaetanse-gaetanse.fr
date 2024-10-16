@@ -16,8 +16,9 @@ export default function Element(props) {
         {!load && (
           <Skeleton
             variant="rectangular"
+            width={props.width}
+            height={props.height}
             style={{ position: 'absolute' }}
-          className='customImgVideoSizeEtc'
           />
         )}
         {/* Image is hidden until loaded */}
@@ -26,9 +27,10 @@ export default function Element(props) {
           src={props.url}
           style={{
             objectFit: 'fill',
+            width: props.width,
+            height: props.height,
             display: load ? 'block' : 'none',
           }}
-          className='customImgVideoSizeEtc'
           onError={(e) => {
             handleErrorFile(e)
           }}
@@ -43,10 +45,11 @@ export default function Element(props) {
         {!load && (
           <Skeleton
             variant="rectangular"
+            width={props.width}
+            height={props.height}
             style={{
                 display: load ? 'none' : 'block',
             }}
-          className='customImgVideoSizeEtc'
           />
         )}
         {/* Video is hidden until loaded */}
@@ -57,9 +60,10 @@ export default function Element(props) {
           controls
           style={{
             objectFit: 'contain',
+            width: props.width,
+            height: props.height,
             display: load ? 'block' : 'none',
           }}
-          className='customImgVideoSizeEtc'
           onError={(e) => {
             handleErrorFile(e)
           }}
