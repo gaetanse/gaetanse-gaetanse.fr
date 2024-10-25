@@ -1,8 +1,18 @@
-import { CUSTOM_LINK_NONE, MMXXIV, MMXXIII, TAG_WORDPRESS, fileCompleteName, TAG_JAVASCRIPT, TAG_HTML, TAG_MATERIAL_UI, TAG_MYSQL, TAG_OPENGL, TAG_PHP, TAG_SQLITE,TAG_SYMFONY, TAG_STEAM, TAG_POEDIT, TAG_BOX2D, TAG_SEMANTIC, TAG_GAME_OFF_2018, TAG_CSHARP, TAG_UNITY, TAG_TCP_IP, TAG_JAVA, TAG_BOOTSTRAP, TAG_CPLUSPLUS, TAG_2D, TAG_3D, TAG_ANDROID, TAG_VUEJS, TAG_SFML, TAG_REACT,TAG_ANTD,TAG_CSS,TAG_JSON, MMXXI, MMXXII, MMXVIII, MMXIX, MMXVII, VIDEO_PATH, PROJECT_BIGTOWN, EXTENSION_MP4, PROJECT_IOT_MODULE, PROJECT_DST, PROJECT_STAYSAFE, PROJECT_MATCH, IMAGE_PREVIEW_PATH, PROJECT_GAETANSE_FR, EXTENSION_PNG, TITLE_GAETANSE_FR, CUSTOM_LINK_GAETANSE_FR, DESCRIPTION_GAETANSE_FR_1, TITLE_IOT_MODULE, PREVIEW_IOT_MODULE, DESCRIPTION_IOT_MODULE_1 } from "./Const"
+import { CUSTOM_LINK_NONE, MMXXIV, MMXXIII, TAG_WORDPRESS, fileCompleteName, TAG_JAVASCRIPT, TAG_HTML, TAG_MATERIAL_UI, TAG_MYSQL, TAG_OPENGL, TAG_PHP, TAG_SQLITE,TAG_SYMFONY, TAG_STEAM, TAG_POEDIT, TAG_BOX2D, TAG_SEMANTIC, TAG_GAME_OFF_2018, TAG_CSHARP, TAG_UNITY, TAG_TCP_IP, TAG_JAVA, TAG_BOOTSTRAP, TAG_CPLUSPLUS, TAG_2D, TAG_3D, TAG_ANDROID, TAG_VUEJS, TAG_SFML, TAG_REACT,TAG_ANTD,TAG_CSS,TAG_JSON, MMXXI, MMXXII, MMXVIII, MMXIX, MMXVII, VIDEO_PATH, PROJECT_BIGTOWN, EXTENSION_MP4, PROJECT_IOT_MODULE, PROJECT_DST, PROJECT_STAYSAFE, PROJECT_MATCH, IMAGE_PREVIEW_PATH, PROJECT_GAETANSE_FR, EXTENSION_PNG, TITLE_GAETANSE_FR, CUSTOM_LINK_GAETANSE_FR, DESCRIPTION_GAETANSE_FR_1, TITLE_IOT_MODULE, PREVIEW_IOT_MODULE, DESCRIPTION_IOT_MODULE_1, TAG_LUA } from "./Const"
 
 //TODO: put all in const
 
 export const importData = [
+    {
+      name: "French translate",
+      date: MMXXIV,
+      preview: "/images/previews/dst-1-1024x576.jpg",
+      custom_link: "https://steamcommunity.com/sharedfiles/filedetails/?id=2595875363",
+      description: ["Mod de traduction en français pour le jeu Don't starve together, ce mod a été mit sur le workshop Steam.","Communauté de 51 000 utilisateurs."],
+      type: fileCompleteName(VIDEO_PATH, PROJECT_DST, EXTENSION_MP4),
+      tags: [TAG_STEAM, TAG_POEDIT, TAG_LUA],
+      expanded: false,
+    },
     {
       name: TITLE_GAETANSE_FR,
       date: MMXXIV,
@@ -101,16 +111,6 @@ export const importData = [
       description: ["Jeu Android et Java, création d'un serveur Java relié au client.","Utilisant Android, java, 2D et de Tcp/ip."],
       type: "/videos/fdr.mp4",
       tags: [TAG_ANDROID, TAG_TCP_IP, TAG_JAVA,TAG_2D],
-      expanded: false,
-    },
-    {
-      name: "Dst traduction fr",
-      date: MMXXI,
-      preview: "/images/previews/dst-1-1024x576.jpg",
-      custom_link: "https://steamcommunity.com/sharedfiles/filedetails/?id=2595875363",
-      description: ["Mod de traduction en français pour le jeu Don't starve together, ce mod a été mit sur le workshop Steam.","Communauté de 51 000 utilisateurs."],
-      type: fileCompleteName(VIDEO_PATH, PROJECT_DST, EXTENSION_MP4),
-      tags: [TAG_STEAM, TAG_POEDIT],
       expanded: false,
     },
     {

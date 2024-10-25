@@ -30,6 +30,7 @@ export const TAG_SEMANTIC = "Semantic"
 export const TAG_TCP_IP = "Tcp Ip"
 export const TAG_BOX2D = "Box2D"
 export const TAG_POEDIT = "Poedit"
+export const TAG_LUA = "Lua"
 export const TAG_STEAM = "Steam"
 export const TAG_UNITY = "Unity"
 export const TAG_ANDROID = "Android"
@@ -72,7 +73,8 @@ export const tagColors = {
     [TAG_WORDPRESS]: "#2271B3",    // inchangé
     [TAG_CPLUSPLUS]: "#5A3D55",    // changé, nouveau
     [TAG_DOTNET]: "#B44C43",       // inchangé
-    [TAG_CSHARP]: "#59351F"        // inchangé
+    [TAG_CSHARP]: "#59351F",        // inchangé
+    [TAG_LUA]: "#3750c2"        // inchangé
   };
 //VALID NAMES
 const CPLUSPLUS_VALID = "cplusplus"

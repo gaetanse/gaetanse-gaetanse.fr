@@ -39,7 +39,7 @@ import { Tooltip } from '@mui/material'
 import emailjs from 'emailjs-com';
 
 import { importData } from "./datas/ProjetsData"
-import { tagColors, handleErrorFile, IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming, TAG_REACT, TAG_JAVASCRIPT, TAG_TYPESCRIPT, TAG_CSHARP, TAG_DOTNET, TAG_PHP, TAG_SYMFONY, TAG_JAVA, TAG_CPLUSPLUS, TAG_UNREAL_ENGINE_5, TAG_OPENGL, TAG_STEAM, TAG_SFML, TAG_BOX2D, TAG_HTML, TAG_CSS, TAG_MYSQL, TAG_BOOTSTRAP, TAG_ANTD, TAG_SEMANTIC, TAG_ANDROID, TAG_POEDIT, TAG_JSON } from './datas/Const'
+import { tagColors, handleErrorFile, IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming, TAG_REACT, TAG_LUA, TAG_JAVASCRIPT, TAG_TYPESCRIPT, TAG_CSHARP, TAG_DOTNET, TAG_PHP, TAG_SYMFONY, TAG_JAVA, TAG_CPLUSPLUS, TAG_UNREAL_ENGINE_5, TAG_OPENGL, TAG_STEAM, TAG_SFML, TAG_BOX2D, TAG_HTML, TAG_CSS, TAG_MYSQL, TAG_BOOTSTRAP, TAG_ANTD, TAG_SEMANTIC, TAG_ANDROID, TAG_POEDIT, TAG_JSON } from './datas/Const'
 
 import './App.css'
 import 'react-vertical-timeline-component/style.min.css'
@@ -436,7 +436,7 @@ function App_new()
             <GridItemMultipleTooltip item_names={[TAG_STEAM, TAG_SFML, TAG_BOX2D]}/>
             <GridItemMultipleTooltip item_names={[TAG_HTML, TAG_CSS, TAG_MYSQL]}/>
             <GridItemMultipleTooltip item_names={[TAG_BOOTSTRAP, TAG_ANTD, TAG_SEMANTIC]}/>
-            <GridItemMultipleTooltip item_names={[TAG_ANDROID, TAG_POEDIT, TAG_JSON]}/>
+            <GridItemMultipleTooltip item_names={[TAG_JSON, TAG_ANDROID, TAG_POEDIT, TAG_LUA]}/>
           </Grid>
 
 </div>
@@ -474,10 +474,10 @@ function App_new()
           <div className="mini_box customBackground" style={{borderRadius: "5px"}}>
                     <CardContent style={{padding: "0px"}}>
                     <b>{element.name}</b> ({ element.date })
-                  {
-                element.custom_link !== "" ? <a href={element.custom_link} target="_blank" rel="noreferrer" style={{color:"black"}}><Tooltip title="Lien disponible !" placement={"right"}><CloudQueueIcon/></Tooltip> </a> : <> <Tooltip title="Lien pas disponible !" placement={"right"}><CloudOffIcon sx={{ color: red[500] }} /></Tooltip> </>
-              }
-                    <br/>
+                    <br/><br/>
+                    {
+                      element.custom_link !== "" ? <div><a href={element.custom_link} target="_blank" rel="noreferrer" style={{color:"blue"}}>Lien disponible!</a></div> : <div style={{color: "red"}} >Lien indisponible!</div>
+                    }
                     <br/>
                       {
                         element.description.map((el)=>{
