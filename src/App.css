@@ -22,10 +22,8 @@ body {
 .box {
   flex: 1;
   display: flex;
-  /*align-items: center;*/
   flex-direction: column; /* Alignement vertical à l'intérieur de chaque box */
   align-items: flex-start; /* Alignement des enfants en haut (gauche par défaut) */
-  justify-content: center;
   justify-content: flex-start; /* Alignement des enfants en haut */
   height: 85vh;
   margin: 0 5px;

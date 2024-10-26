@@ -349,7 +349,7 @@ function App_new()
                 Fullstack</p>
               </div>
         </div>
-        <div className="box">
+        {/*<div className="box">
           <img src={"/images/previews/6KtBk6lJ_dHLHG5aSzmo0-transformed.png"} 
             style={{
               backgroundImage: "url('/images/previews/circle.ae5f84b3853b9e34aa83cf8dada715c5.svg')",
@@ -358,6 +358,25 @@ function App_new()
               backgroundRepeat: 'no-repeat',
               backgroundPosition: '50% 65%', // Centered horizontally and 20% from the top
             }}></img>
+        </div>*/}
+        <div className="box">
+          <div
+            className="image-container"
+            style={{
+              backgroundImage: "url('/images/previews/circle.ae5f84b3853b9e34aa83cf8dada715c5.svg')",
+              backgroundSize: '85%',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: '50% 65%',
+              height: '100%',
+              position: 'relative',
+            }}
+          >
+            <img
+              src="/images/previews/6KtBk6lJ_dHLHG5aSzmo0-transformed.png"
+              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+              alt="Preview"
+            />
+          </div>
         </div>
         <div className="box">
               <div style={{border: "0px solid rgba(0, 0, 0, 0.4)", padding: "20px 35px", borderRadius: "15px", margin: "25px 0px 25px 0%"}}>
@@ -466,7 +485,7 @@ function App_new()
                     }
             </div>
             <div className="mini_box" style={{borderRadius: "20px"}}>
-            <Element name={element.name} description={element.description} url={element.type} width={"100%"} height={"auto"} />
+            <Element name={element.name} description={element.description} preview={element.preview} url={element.type} width={"100%"} height={"auto"} />
             </div>
             <div className="mini_box mini_box_custom" style={{borderRadius: "20px"}}>
 

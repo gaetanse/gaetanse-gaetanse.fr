@@ -96,6 +96,7 @@ export const CUSTOM_LINK_GAETANSE_FR = "https://github.com/gaetanse/gaetanse.fr"
 export const DESCRIPTION_GAETANSE_FR_1 = "Projet de portfolio en utilisant React et Material Ui ainsi que du CSS pur."
 
 export const TITLE_IOT_MODULE = "IOT-Modules"
+export const CUSTOM_LINK_IOT_MODULE = "https://github.com/gaetanse/IOT-Modules"
 export const PROJECT_IOT_MODULE = "iot_modules_compress"
 export const PREVIEW_IOT_MODULE = "iot-modules"
 export const DESCRIPTION_IOT_MODULE_1 = "Projet simulant le fonctionnement de modules. Création de données aléatoires en tâche de fond. Stockage de ces données dans une base de donnée sous SQLite."
@@ -103,6 +104,19 @@ export const DESCRIPTION_IOT_MODULE_1 = "Projet simulant le fonctionnement de mo
 export const PROJECT_MATCH = "match_compress"
 export const PROJECT_DST = "dst_compress"
 export const PROJECT_STAYSAFE = "staysafe_compress"
+
+export const PREVIEW_FRENCDSTMOD = "french_translate_dst_mod"
+
+export const CUSTOM_LINK_MATCH = "https://github.com/gaetanse/match"
+export const CUSTOM_LINK_CHAR = "https://github.com/gaetanse/char-project"
+export const CUSTOM_LINK_FILMOTHEQUE = "https://github.com/gaetanse/Filmotheque-VueJS"
+export const CUSTOM_LINK_ADOPTE_UN_CHAT = "https://github.com/gaetanse/adopteUnChat"
+export const CUSTOM_LINK_CUBE_THAT_DO_THINGS = "https://github.com/gaetanse/cubeThatDoThings"
+export const CUSTOM_LINK_MAP = "https://github.com/gaetanse/map"
+export const CUSTOM_LINK_POKEMON = "https://github.com/gaetanse/redux-react-pokemon"
+export const CUSTOM_LINK_IMC = "https://github.com/gaetanse/react-express-imc"
+export const CUSTOM_LINK_SMASH_PATANIMAL = "https://github.com/gaetanse/Smash-Patanimal"
+
 //extension
 export const EXTENSION_PNG = ".png"
 export const EXTENSION_MP4 = ".mp4"
