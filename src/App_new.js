@@ -541,7 +541,7 @@ function App_new()
       <img src="/images/previews/cv alternance.png" className="CustomMaxSize"/>
     </Grid>
     <Grid item xs={4} sm={4} md={12}>
-      <Button style={{backgroundColor: mainColor, color: "black"}} color="secondary" size="large" endIcon={<DownloadIcon />} href="/files/cv.pdf" target="_blank" rel="noreferrer">Téléchargez mon CV</Button>
+      <Button style={{backgroundColor: mainColor, color: "black"}} color="secondary" size="large" endIcon={<DownloadIcon />} href="/files/CV DEVELOPPEUR GAETAN SADOUS ALTERNANCE.pdf" target="_blank" rel="noreferrer">Téléchargez mon CV</Button>
     </Grid>
   </Grid>
 
