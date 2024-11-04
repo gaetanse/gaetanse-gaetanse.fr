@@ -14,8 +14,8 @@ const Item = styled(Paper)(({ theme }) => ({
 function GridItemMultipleTooltip({item_names, width=48}) //TODO: width=48 (default value in const)
 {
     return(
-        <Grid item xs={4} sm={4} md={1.5} style={{boxShadow: "0px !important"}}>
-            <Item style={{boxShadow: "0px !important"}}> { /*TODO: boxShadow: "2px 2px 17px 3px " + mainColor to const*/  }
+        <Grid item xs={4} sm={4} md={1.5} style={{boxShadow: "0px !important", '--Paper-shadow': '0 !important'}}>
+            <Item style={{boxShadow: "0px !important", '--Paper-shadow': '0 !important'}}> { /*TODO: boxShadow: "2px 2px 17px 3px " + mainColor to const*/  }
                 {
                     item_names.map((name,index)=>
                     {
