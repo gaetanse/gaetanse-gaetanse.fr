@@ -1,5 +1,5 @@
 //dates
-export const MMXXIV = "2024"
+/*export const MMXXIV = "2024"
 export const MMXXIII = "2023"
 export const MMXXII = "2022"
 export const MMXXI = "2021"
@@ -121,39 +121,151 @@ export const EXTENSION_PNG = ".png"
 export const EXTENSION_MP4 = ".mp4"
 //colors
 export const mainColor = "#b0b9a8"
-export function colorName(input)
-{
-    return input
-}
-//rewrite bad naming
-export function CheckBadNaming(input)
-{
-    let srcName = input
-    if(input===TAG_CSHARP) srcName = CSHARP_VALID
-    else if(input===TAG_DOTNET) srcName = DOTNET_VALID
-    else if(input===TAG_CPLUSPLUS) srcName = CPLUSPLUS_VALID
-    return srcName
-}
-//file complete
-export function fileCompleteName(type, input, extension)
-{
-    if(extension==undefined)
-    {
-        if(type.startsWith(IMAGE_PATH))
-        {
-            extension = EXTENSION_PNG
+*/
+// Consolidate all constants into a single object
+const _ = {
+    // Dates
+    MMXXIV: "2024",
+    MMXXIII: "2023",
+    MMXXII: "2022",
+    MMXXI: "2021",
+    MMXIX: "2019",
+    MMXVIII: "2018",
+    MMXVII: "2017",  
+    // Tags
+    TAG_HTML: "Html",
+    TAG_REACT: "React",
+    TAG_ANTD: "Antd",
+    TAG_CSS: "Css",
+    TAG_JSON: "Json",
+    TAG_OPENGL: "Opengl",
+    TAG_JAVASCRIPT: "Javascript",
+    TAG_TYPESCRIPT: "Typescript",
+    TAG_MYSQL: "Mysql",
+    TAG_PHP: "Php",
+    TAG_MATERIAL_UI: "Material Ui",
+    TAG_SYMFONY: "Symfony",
+    TAG_VUEJS: "VueJS",
+    TAG_GAME_OFF_2018: "Game Off 2018",
+    TAG_BOOTSTRAP: "Bootstrap",
+    TAG_UNREAL_ENGINE_5: "Unreal Engine 5",
+    TAG_2D: "2D",
+    TAG_3D: "3D",
+    TAG_SFML: "Sfml",
+    TAG_SEMANTIC: "Semantic",
+    TAG_TCP_IP: "Tcp Ip",
+    TAG_BOX2D: "Box2D",
+    TAG_POEDIT: "Poedit",
+    TAG_LUA: "Lua",
+    TAG_STEAM: "Steam",
+    TAG_UNITY: "Unity",
+    TAG_ANDROID: "Android",
+    TAG_SQLITE: "Sqlite",
+    TAG_JAVA: "Java",
+    TAG_WORDPRESS: "Wordpress",
+    TAG_CPLUSPLUS: "C++",
+    TAG_DOTNET: ".NET",
+    TAG_CSHARP: "C#",  
+    // Valid names
+    CPLUSPLUS_VALID: "cplusplus",
+    DOTNET_VALID: "dotnet",
+    CSHARP_VALID: "csharp",  
+    // Paths
+    IMAGE_PATH: "/images/",
+    IMAGE_PREVIEW_PATH: "/images/previews/",
+    IMAGE_ICON_PATH: "/images/icons/",
+    VIDEO_PATH: "/videos/",  
+    // Projects
+    PROJECT_BIGTOWN: "bigtown_compress",
+    TITLE_GAETANSE_FR: "Gaetanse.fr",
+    PROJECT_GAETANSE_FR: "gaetanse_fr",
+    CUSTOM_LINK_GAETANSE_FR: "https://github.com/gaetanse/gaetanse.fr",
+    DESCRIPTION_GAETANSE_FR_1: "Projet de portfolio en utilisant React et Material Ui ainsi que du CSS pur.",
+    TITLE_IOT_MODULE: "IOT-Modules",
+    CUSTOM_LINK_IOT_MODULE: "https://github.com/gaetanse/IOT-Modules",
+    PROJECT_IOT_MODULE: "iot_modules_compress",
+    PREVIEW_IOT_MODULE: "iot-modules",
+    DESCRIPTION_IOT_MODULE_1: "Projet simulant le fonctionnement de modules. Création de données aléatoires en tâche de fond. Stockage de ces données dans une base de donnée sous SQLite.",
+    PROJECT_MATCH: "match_compress",
+    PROJECT_DST: "dst_compress",
+    PROJECT_STAYSAFE: "staysafe_compress",
+    PREVIEW_FRENCDSTMOD: "french_translate_dst_mod",
+    CUSTOM_LINK_MATCH: "https://github.com/gaetanse/match",
+    CUSTOM_LINK_CHAR: "https://github.com/gaetanse/char-project",
+    CUSTOM_LINK_FILMOTHEQUE: "https://github.com/gaetanse/Filmotheque-VueJS",
+    CUSTOM_LINK_ADOPTE_UN_CHAT: "https://github.com/gaetanse/adopteUnChat",
+    CUSTOM_LINK_CUBE_THAT_DO_THINGS: "https://github.com/gaetanse/cubeThatDoThings",
+    CUSTOM_LINK_MAP: "https://github.com/gaetanse/map",
+    CUSTOM_LINK_POKEMON: "https://github.com/gaetanse/redux-react-pokemon",
+    CUSTOM_LINK_IMC: "https://github.com/gaetanse/react-express-imc",
+    CUSTOM_LINK_SMASH_PATANIMAL: "https://github.com/gaetanse/Smash-Patanimal",  
+    // Extensions
+    EXTENSION_PNG: ".png",
+    EXTENSION_MP4: ".mp4",  
+    // Main color
+    MAIN_COLOR: "#b0b9a8",  
+    // Tag colors
+    TAG_COLORS: {
+      "Html": "#CDA434",
+      "React": "#252850",
+      "Antd": "#763C28",
+      "Css": "#A12312",
+      "Json": "#D9534F",
+      "Opengl": "#7B3F61",
+      "Javascript": "#212121",
+      "Typescript": "#909090",
+      "Mysql": "#4C2F27",
+      "Php": "#1D334A",
+      "Material Ui": "#FF5733",
+      "Symfony": "#755C48",
+      "VueJS": "#6D6552",
+      "Game Off 2018": "#403A3A",
+      "Bootstrap": "#7F7679",
+      "Unreal Engine 5": "#F4A900",
+      "2D": "#FF6F61",
+      "3D": "#35682D",
+      "Sfml": "#193737",
+      "Semantic": "#8A9597",
+      "Tcp Ip": "#3F888F",
+      "Box2D": "#FAD201",
+      "Poedit": "#6C6874",
+      "Steam": "#641C34",
+      "Unity": "#F4F4F4",
+      "Android": "#F5D033",
+      "Sqlite": "#7FB5B5",
+      "Java": "#3A405A",
+      "Wordpress": "#2271B3",
+      "C++": "#5A3D55",
+      ".NET": "#B44C43",
+      "C#": "#59351F",
+      "Lua": "#3750c2"
+    },
+    // Functions
+    colorName(input) {
+        return input;
+    },
+    CheckBadNaming(input) {
+        let srcName = input;
+        if(input === this.TAG_CSHARP) srcName = this.CSHARP_VALID;
+        else if(input === this.TAG_DOTNET) srcName = this.DOTNET_VALID;
+        else if(input === this.TAG_CPLUSPLUS) srcName = this.CPLUSPLUS_VALID;
+        return srcName;
+    },
+    fileCompleteName(type, input, extension) {
+        if(extension === undefined) {
+            if(type.startsWith(this.IMAGE_PATH)) {
+                extension = this.EXTENSION_PNG;
+            } else if(type.startsWith(this.VIDEO_PATH)) {
+                extension = this.EXTENSION_MP4;
+            }
         }
-        else if(type.startsWith(VIDEO_PATH))
-        {
-            extension = EXTENSION_MP4
-        }
+        const fullName = type + input + extension;
+        return fullName.toLowerCase();
+    },
+    handleErrorFile(e) {
+        e.target.src = "/erreur-404.png";
+        e.target.alt = "made by design-circle : https://www.flaticon.com/fr/auteurs/design-circle";
     }
-    const fullName = type + input + extension
-    return fullName.toLowerCase()
 }
-//handle error file
-export function handleErrorFile(e)
-{
-    e.target.src = "/erreur-404.png"
-    e.target.alt = "made by design-circle : https://www.flaticon.com/fr/auteurs/design-circle"
-}
+  
+export default _

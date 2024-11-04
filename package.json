@@ -5,17 +5,16 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-    "@mui/icons-material": "^5.16.7",
-    "@mui/material": "^5.16.7",
+    "@mui/icons-material": "^6.1.6",
+    "@mui/material": "^6.1.6",
     "emailjs-com": "^3.2.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-vertical-timeline-component": "^3.6.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "postcss": "^8.4.41",
+    "postcss": "^8.4.47",
     "react-scripts": "^5.0.1",
-    "web-vitals": "^4.2.3"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,8 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "overrides": {
-    "postcss": "^8.4.41"
   }
 }

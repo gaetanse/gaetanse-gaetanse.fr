@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Skeleton from '@mui/material/Skeleton'
-import { IMAGE_PATH, VIDEO_PATH, handleErrorFile } from '../datas/Const'
+import _ from '../datas/Const'
 
 export default function Element(props) {
   const [load, setLoad] = useState(false)
@@ -9,7 +9,7 @@ export default function Element(props) {
     setLoad(true) // Triggered when the image or video has loaded
   }
 
-  if (props.url.startsWith(IMAGE_PATH)) {
+  if (props.url.startsWith(_.IMAGE_PATH)) {
     return (
       <>
         {/* Skeleton is displayed while loading */}
@@ -32,13 +32,13 @@ export default function Element(props) {
             display: load ? 'block' : 'none',
           }}
           onError={(e) => {
-            handleErrorFile(e)
+            _.handleErrorFile(e)
           }}
           onLoad={handleLoad}
         />
       </>
     )
-  } else if (props.url.startsWith(VIDEO_PATH)) {
+  } else if (props.url.startsWith(_.VIDEO_PATH)) {
     return (
       <>
         {/* Skeleton is displayed while loading */}
@@ -66,7 +66,7 @@ export default function Element(props) {
             height: props.height,
           }}
           onError={(e) => {
-            handleErrorFile(e)
+            _.handleErrorFile(e)
           }}
           //onLoadedData={handleLoad}
           onCanPlay={handleLoad} // Trigger load completion here

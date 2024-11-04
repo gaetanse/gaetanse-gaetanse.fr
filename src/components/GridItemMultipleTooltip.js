@@ -2,16 +2,16 @@ import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
-import { IMAGE_ICON_PATH, EXTENSION_PNG, mainColor, CheckBadNaming, handleErrorFile } from '../datas/Const'
+import _ from '../datas/Const'
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'light' ? "transparent" : '#ffffff',
     ...theme.typography.body2,
     padding: theme.spacing(1),
     color: theme.palette.text.secondary,
-})) //TODO: put this in a const and remove unnecessary things
+}))
 
-function GridItemMultipleTooltip({item_names, width=48, id="testImage", alts=[]}) //TODO: id="testImage" remove ? //TODO: width=48 (default value in const)
+function GridItemMultipleTooltip({item_names, width=48}) //TODO: width=48 (default value in const)
 {
     return(
         <Grid item xs={4} sm={4} md={1.5} style={{boxShadow: "0px !important"}}>
@@ -19,9 +19,9 @@ function GridItemMultipleTooltip({item_names, width=48, id="testImage", alts=[]}
                 {
                     item_names.map((name,index)=>
                     {
-                        const srcName = CheckBadNaming(name).toLowerCase()
+                        const srcName = _.CheckBadNaming(name).toLowerCase()
                         // TODO: <img> add alt to it (using alts)
-                        return (<Tooltip key={""} title={name} arrow className="wobble-on-hover"><img src={ IMAGE_ICON_PATH + srcName + EXTENSION_PNG } width={width} style={{}} onError={(e)=>{handleErrorFile(e)}}/></Tooltip>)
+                        return (<Tooltip key={index} title={name} arrow className="wobble-on-hover"><img src={ _.IMAGE_ICON_PATH + srcName + _.EXTENSION_PNG } width={width} style={{}} onError={(e)=>{_.handleErrorFile(e)}}/></Tooltip>)
                     })
                 }
             </Item>
