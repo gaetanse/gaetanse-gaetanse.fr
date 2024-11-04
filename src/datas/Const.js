@@ -86,7 +86,6 @@ export const IMAGE_PREVIEW_PATH = "/images/previews/"
 export const IMAGE_ICON_PATH = "/images/icons/"
 export const VIDEO_PATH = "/videos/"
 //projects TODO: remove duplicate and use only one (rename files)
-export const CUSTOM_LINK_NONE = ""
 
 export const PROJECT_BIGTOWN = "bigtown_compress"
 
@@ -138,6 +137,17 @@ export function CheckBadNaming(input)
 //file complete
 export function fileCompleteName(type, input, extension)
 {
+    if(extension==undefined)
+    {
+        if(type.startsWith(IMAGE_PATH))
+        {
+            extension = EXTENSION_PNG
+        }
+        else if(type.startsWith(VIDEO_PATH))
+        {
+            extension = EXTENSION_MP4
+        }
+    }
     const fullName = type + input + extension
     return fullName.toLowerCase()
 }

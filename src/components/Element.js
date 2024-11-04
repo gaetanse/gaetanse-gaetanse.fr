@@ -52,54 +52,13 @@ export default function Element(props) {
             }}
           />
         )}
-        {/* 
-            Video is hidden until loaded 
-
-<video
+        <video
           key={props.url}
           src={props.url}
           alt={props.name}
           muted
           controls
           playsInline
-          preload="auto"
-          poster={props.preview}  // Add a path to your desired preview image
-          style={{
-            objectFit: 'contain',
-            width: props.width,
-            height: props.height,
-            opacity: load ? 1 : 0,
-            transition: 'opacity 0.3s ease', // Smooth fade-in effect
-          }}
-          onError={(e) => {
-            handleErrorFile(e)
-          }}
-          onLoadedData={handleLoad}
-          onCanPlay={handleLoad} // Trigger load completion here
-          onLoadedMetadata={handleLoad} // Trigger load completion here
-
-
-
-
-          
-          src={props.url}
-          controls
-          playsInline
-          muted
-          autoPlay={false}
-          preload="metadata" // Preload only metadata, which may help with load times
-          style={{ width: '100%', height: 'auto' }}
-        />
-
-        */}
-        <video
-          //key={props.url}
-          src={props.url}
-          alt={props.name}
-          muted
-          controls
-          playsInline
-          preload="metadata"
           poster={props.preview}  // Add a path to your desired preview image
           style={{
             objectFit: 'contain',
@@ -109,9 +68,9 @@ export default function Element(props) {
           onError={(e) => {
             handleErrorFile(e)
           }}
-          onLoadedData={handleLoad}
+          //onLoadedData={handleLoad}
           onCanPlay={handleLoad} // Trigger load completion here
-          onLoadedMetadata={handleLoad} // Trigger load completion here
+          //onLoadedMetadata={handleLoad} // Trigger load completion here
         />
       </>
     )

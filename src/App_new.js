@@ -495,7 +495,10 @@ function App_new()
                     <b>{element.name}</b> ({ element.date })
                     <br/><br/>
                     {
-                      element.custom_link !== "" ? <div><a href={element.custom_link} target="_blank" rel="noreferrer" style={{color:"blue"}}>Lien disponible!</a></div> : <div style={{color: "red"}} >Lien indisponible!</div>
+                      element.demonstration_link !== undefined ? <div><a href={element.demonstration_link} target="_blank" rel="noreferrer" style={{color:"blue"}}>Démo!</a></div> : <></>
+                    }
+                    {
+                      element.custom_link !== undefined ? <div><a href={element.custom_link} target="_blank" rel="noreferrer" style={{color:"blue"}}>Lien disponible!</a></div> : <div style={{color: "red"}} >Lien indisponible!</div>
                     }
                     <br/>
                       {
